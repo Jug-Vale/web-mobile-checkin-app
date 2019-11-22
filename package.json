@@ -5,10 +5,9 @@
   "homepage": "https://jugvale.com",
   "private": true,
   "scripts": {
-    "start": "ionic-app-scripts serve",
-    "clean": "ionic-app-scripts clean",
-    "build": "ionic-app-scripts build",
-    "lint": "ionic-app-scripts lint"
+    "ionic:build:prod": "ionic-app-scripts build -- --prod",
+    "start": "node server.js",
+    "heroku-postbuild": "npm run ionic:build:prod"
   },
   "dependencies": {
     "@angular/animations": "5.2.11",
