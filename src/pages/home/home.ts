@@ -25,15 +25,20 @@ export class HomePage {
           loading.dismiss();        
           console.log(response);
 
-          let message = "Obrigado por estar presente no JUG Vale 15 * " + this.checkin.name.toUpperCase() + " *"
+          let message = "Obrigado por estar presente no JUG Vale 15 * " + this.checkin.name.toUpperCase() + " *";
           this.checkin.name = '';
           this.checkin.email = '';
 
-          this._showAlert(message)
+          this._showAlert(message);
         }, error => {
           loading.dismiss();
           console.log(error);
-          this._showAlert("Erro em realizar o checkin. Provavelmente o email está inválido ou a presença já foi confirmada!")
+
+          let message = "Erro em realizar o checkin. Provavelmente o email está inválido ou a presença já foi confirmada!";
+          this.checkin.name = '';
+          this.checkin.email = '';
+          
+          this._showAlert(message);
         });
     }  
 
